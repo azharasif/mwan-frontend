@@ -1,0 +1,41 @@
+<div style="text-align:center">
+    <li blueColored>My news</li>
+</div>
+<!-- 
+<div *ngFor='let element of  Mydata' >
+    <p>{{element.title}}</p>
+    <p>{{element.news}}</p>
+    <p>{{element.date_created}}</p>
+
+</div> -->
+
+
+<table *ngFor='let element of  Mydata'>
+    <thead>
+{{message}}
+    </thead>
+    <tbody>
+        <tr>
+            <td>Title</td>
+            <td>{{element.title}}</td>
+        </tr>
+        <tr>
+            <td>News</td>
+            <td>{{element.news}}</td>
+        </tr>
+        <tr>
+            <td>Date Created</td>
+            <td>{{element.date_created}}</td>
+        </tr>
+        <p>
+            <button class="btn btn-primary" (click)="editnews(element._id)">Edit</button>
+            <button class="btn btn-primary" (click)="deletenews(element._id)">Delete</button>
+        </p>
+     
+        
+        <br>
+        <br>
+    </tbody>
+</table>
+<br>
+<br>

@@ -1,0 +1,26 @@
+
+<form class="form-signin"  [formGroup]="NewsForm" novalidate>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"></label>
+    News Title
+     <input type="text" formControlName='title'   rows="3" >
+     <div *ngIf="NewsForm.controls['title'].invalid && (NewsForm.controls['title'].dirty || NewsForm.controls['title'].touched)" class="alert alert-danger">
+      <div *ngIf="NewsForm.controls['title'].errors.required">
+      Title is required.
+    </div>
+  </div>
+     <br>
+    Description
+    <textarea class="form-control" formControlName='news' name="NEWS" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <div *ngIf="NewsForm.controls['news'].invalid && (NewsForm.controls['news'].dirty || NewsForm.controls['news'].touched)" class="alert alert-danger">
+      <div *ngIf="NewsForm.controls['news'].errors.required">
+      news is required.
+    </div>
+  </div>
+    <a class="btn btn-primary btn-sm"  style="margin-top:3%;"  type="submit" (click)='uploadNews()'>upload news</a>
+  </div>
+{{message}}
+</form>
+
+
+

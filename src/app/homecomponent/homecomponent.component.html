@@ -1,0 +1,30 @@
+<div>
+<table  *ngFor='let element of   allNews'>
+    <thead>
+
+    </thead>
+    <tbody  class="container">
+        <tr>
+            <td>News by : </td>
+            <td>{{element.user_id.username}}</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>{{element.title}}</td>
+        </tr>
+    
+        <tr>
+            <td>News</td>
+            <td>{{element.news}}</td>
+        </tr>
+        <tr>
+            <td>Date Created</td>
+            <td>{{element.date_created}}</td>
+        </tr>
+        <br>
+        <br>
+    </tbody>
+</table>
+<br>
+<br>
+</div>

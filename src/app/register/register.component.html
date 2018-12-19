@@ -1,0 +1,52 @@
+<script>
+    angular.module('ngMinlengthExample', [])
+      .controller('age', ['$scope', function($scope) {
+        $scope.minlength = 2;
+      }]);
+  </script>
+
+<div class="container">
+  <div class="card card-container">
+     
+    
+      <p id="profile-name" class="profile-name-card"></p>
+      <h1>GET REGISTRED</h1>
+      <form class="form-signin" [formGroup]=" registerForm" >
+          <span id="reauth-email" class="reauth-email"></span>
+          <input type="text" formControlName="name"  formControlName="name"  name="NAME"  class="form-control" placeholder="Full Name" required autofocus>
+          <span *ngIf="isValid('name')" style="color:red">name field should not b blank</span>
+          <input type="number" formControlName="age"  name="AGE"  class="form-control" placeholder="Age"   required >
+          <span *ngIf="isValid('age')" style="color:red" >age filed should not be blank</span>
+          
+      
+
+          <input type="email" id="inputEmail"  formControlName="email" name="EMAIL"   class="form-control" placeholder="Email address" required pattern="[0-9]">
+          <span *ngIf="isValid('email')" style="color:red"  >enter a valid Email Adress</span>
+          
+          <input type="password" id="inputPassword" name="PASS"  formControlName="password" class="form-control" placeholder="Password" required>
+          
+          <span *ngIf="isValid('password')" style="color:red" >enter your password</span>
+          <div id="remember" class="checkbox">
+
+            
+          </div>
+          <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="register()" >Register</button>
+
+          <div class="text-align :center ; ">
+
+          </div>
+
+          {{successMessage}}
+      </form>
+
+
+
+    
+      
+Already Have an Account ??
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"  (click)="movetologin()" >SignIn</button>
+
+    
+  </div>
+</div>
+
